@@ -12,26 +12,60 @@ namespace FirstStep
         {
           
             Console.WriteLine("1-е задание, введите 2 числа");
-            string a = Console.ReadLine();
-            string b = Console.ReadLine();
+            string value1 = Console.ReadLine();
+            string value2 = Console.ReadLine();
+            int valueint1;
+            int valueint2;
 
-            int c = Convert.ToInt32(a) + Convert.ToInt32(b);
-            Console.WriteLine("Сумма: "+c);
+            bool resultvalue1 = Int32.TryParse(value1, out valueint1);
+            bool resultvalue2 = Int32.TryParse(value2, out valueint2);
+            if ((resultvalue1 == false) || (resultvalue2 == false))
+            {
+                Console.WriteLine("Неправильный тип введенных данных");
 
+            }
+            else
+            {
+                int value3 = Convert.ToInt32(value1) + Convert.ToInt32(value2);
+                Console.WriteLine("Сумма: " + value3);
+            }
+            
             Console.WriteLine("2-е задание, введите i и n");
-            string I = Console.ReadLine();
-            string N = Console.ReadLine();
-            int i = Convert.ToInt32(I);
-            int n = Convert.ToInt32(N);
-            int cc = n << i;
-            int ccc = cc & 1;
-            Console.WriteLine("i-ый бит числа n "+ccc);
+            string stri = Console.ReadLine();
+            string strn = Console.ReadLine();
+            int n;
+            int i;
+            bool resulti = Int32.TryParse(stri, out i);
+            bool resultn = Int32.TryParse(strn, out n);
+
+            if ((resulti == false) || (resultn == false))
+             {
+                Console.WriteLine("Неправильный тип введенных данных");
+
+             }
+             else
+              {
+                int shiftn = n << i;
+                int ibit = shiftn & 1;
+                Console.WriteLine("i-ый бит числа n " + ibit);
+            }
 
             Console.WriteLine("3-е задание, введите число");
-            string K = Console.ReadLine();
-            int k = Convert.ToInt32(K);
-            int kk = k & 1022;
-            Console.WriteLine("Если обнулить последний бит, то получится "+kk);
+            string value = Console.ReadLine();
+            int valueint;
+            int zerobit;
+            bool result = Int32.TryParse(value, out valueint);
+            if (result == false)
+             {
+                Console.WriteLine("Неправильный тип введенных данных");
+               
+             }
+            else
+             {
+                zerobit = valueint & 1022;
+                Console.WriteLine("Если обнулить последний бит, то получится " + zerobit);
+                Console.ReadLine();
+             }
 
         }
     }
