@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C27C1412-FD0C-4EE8-8F50-CBE7F8E99CE7}</ProjectGuid>
+    <ProjectGuid>{68E35143-1F49-46DF-9C95-664EAC1EA78E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SecondStep</RootNamespace>
-    <AssemblyName>SecondStep</AssemblyName>
+    <RootNamespace>calculator</RootNamespace>
+    <AssemblyName>calculator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
