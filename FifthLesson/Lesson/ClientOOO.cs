@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lesson
 {
-    class clientOOO : client
+    class ClientOOO : Client
     {
         private string name;
         private string bankAccount;
@@ -21,11 +21,12 @@ namespace Lesson
             get { return name; }
             set { name = value; }
         }
-        public clientOOO(string name,float orderPrice) 
-            {
-            Console.WriteLine(String.Format("ООО {0}:", name));
-            client.cl
 
+        // Конструктор.
+        public ClientOOO (string _name,string _bankAccount,float _orderPrice) :base(_orderPrice)
+        {
+            Name = _name;
+            BankAccount = _bankAccount;
         }
          
 
