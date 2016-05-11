@@ -13,11 +13,11 @@ namespace Homework
             // Считать строку с консоли.Создать словарь, где ключом будет символ строки, а значением - количество данных символов в считанной строке. 
             Console.WriteLine("Введите строку:");
             string stringDictionary = Console.ReadLine();
-            int stringLength= stringDictionary.Length;
+            int stringLength = stringDictionary.Length;
             Dictionary<char, int> myDictionary = new Dictionary<char, int>();
             char symbol;
             int countSymbol = 0;
-            for (int i=0; i<stringLength;i++)
+            for (int i = 0; i < stringLength; i++)
             {
                 symbol = stringDictionary[i];
                 countSymbol = 0;
@@ -31,7 +31,7 @@ namespace Homework
                         }
                     }
                     myDictionary.Add(symbol, countSymbol);
-                    
+
                 }
             }
             Console.WriteLine("Словарь:");
@@ -42,54 +42,71 @@ namespace Homework
             Console.ReadLine();
 
             //Считывать с консоли числа, пока не будет введено число “-1”, среди введенных чисел вывести все дублирующиеся.             
-             List<int> numberList = new List<int>();
-             Console.WriteLine("Вводите числа");
-             int number;
-             do
-             {
-                if (int.TryParse(Console.ReadLine(), out number))
+            List<int> numberList = new List<int>();
+            Console.WriteLine("Вводите числа");
+
+            int number;
+
+            do
+            {
+                string stringNumber = Console.ReadLine();
+                if (int.TryParse(stringNumber, out number))
                 {
-                    numberList.Add(number);
+
+                    if (number == -1)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        numberList.Add(number);
+                    }
                 }
                 else
                 {
                     Console.WriteLine("Вы ввели не число");
                     break;
                 }
-             }
-
+            }
             while (!(number == -1));
+            // Проверим лист.
+            Console.WriteLine("Вы ввели:");
+            for (int i = 0; i < numberList.Count; i++)
+            { Console.Write(numberList[i] + " "); }
+
+            Console.ReadLine();
+            Console.WriteLine("Дублирующиеся зна:");
 
             Dictionary<int, int> doubleNumbers = new Dictionary<int, int>();
             int countNumber = 0;
-            for (int i = 0; i < numberList.Count - 1; i++)
+            for (int i = 0; i < numberList.Count; i++)
             {
                 if (!doubleNumbers.ContainsKey(numberList[i]))
                 {
                     countNumber = 0;
-                    for (int j = 0; j < numberList.Count - 1; j++)
+                    for (int j = 0; j < numberList.Count; j++)
                     {
-                        if (numberList[i]==numberList[j])
+                        if (numberList[i] == numberList[j])
                         { countNumber++; }
-                        
-                      }
+
+                    }
                     doubleNumbers.Add(numberList[i], countNumber);
                     if (countNumber > 1)
                     {
                         Console.Write(numberList[i] + " ");
-                        continue;
                     }
                 }
-                    
-                }
+
+            }
             Console.ReadLine();
         }
-           
 
-            
-            
-            
 
-        }
+
+
+
+
     }
+}
+
 
